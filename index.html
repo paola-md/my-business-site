@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!-- schole-project: business-site-v1 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ridgeway Bike Workshop | Same-week bike repairs in Millbrook</title>
+<meta name="description" content="Ridgeway Bike Workshop in Millbrook: same-week bike repairs. Tune-ups, full services, flat tire fixes and e-bike checks at 14 Station Road.">
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --text: #1f2420;
+    --muted: #5a625c;
+    --accent: #2f6b3a;
+    --accent-hover: #245430;
+    --on-accent: #ffffff;
+    --accent-soft: #e3efe4;
+    --border: #dcd8cf;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161a17;
+      --surface: #1f2420;
+      --text: #ecefe9;
+      --muted: #a9b2ab;
+      --accent: #7fc48b;
+      --accent-hover: #9bd4a5;
+      --on-accent: #10140f;
+      --accent-soft: #24352a;
+      --border: #333a35;
+    }
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 46rem; margin: 0 auto; padding: 0 1rem; }
+  header {
+    background: var(--accent);
+    color: var(--on-accent);
+    padding: 3rem 0 2.5rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    header { background: var(--accent-soft); color: var(--text); }
+  }
+  h1 {
+    margin: 0 0 0.4rem;
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  .tagline { margin: 0; font-size: 1.2rem; opacity: 0.92; }
+  main { padding: 1rem 0 3rem; }
+  section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem 1.25rem;
+    margin-top: 1.5rem;
+  }
+  h2 {
+    margin: 0 0 1rem;
+    font-size: 1.4rem;
+    color: var(--accent);
+  }
+  .services { list-style: none; margin: 0; padding: 0; }
+  .services li {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.25rem 1rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .services li:first-child { padding-top: 0; }
+  .services li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .name { font-weight: 600; }
+  .price { font-weight: 700; color: var(--accent); white-space: nowrap; }
+  .detail { grid-column: 1 / -1; color: var(--muted); font-size: 0.98rem; }
+  .note {
+    margin: 1.25rem 0 0;
+    padding: 0.9rem 1rem;
+    background: var(--accent-soft);
+    border-radius: 8px;
+  }
+  .hours {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.05rem;
+  }
+  .hours caption {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .hours th, .hours td {
+    padding: 0.7rem 0.5rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .hours thead th {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    border-bottom: 2px solid var(--border);
+  }
+  .hours th:first-child, .hours td:first-child { padding-left: 0; text-align: left; }
+  .hours th:last-child, .hours td:last-child { padding-right: 0; text-align: right; }
+  .hours tbody th { font-weight: 600; }
+  .hours tbody tr:last-child th, .hours tbody tr:last-child td { border-bottom: 0; }
+  .closed { color: var(--muted); }
+  address { font-style: normal; font-size: 1.15rem; font-weight: 600; }
+  a { color: var(--accent); }
+  p { margin: 0 0 0.75rem; }
+  p:last-child { margin-bottom: 0; }
+  .button {
+    display: inline-block;
+    margin: 0.25rem 0 1rem;
+    padding: 0.85rem 1.5rem;
+    min-height: 44px;
+    background: var(--accent);
+    color: var(--on-accent);
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    border-radius: 999px;
+    transition: background-color 0.15s ease;
+  }
+  .button:hover { background: var(--accent-hover); }
+  .button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  @media (max-width: 30rem) {
+    .button { display: block; text-align: center; }
+  }
+  footer { text-align: center; color: var(--muted); font-size: 0.9rem; padding: 0 1rem 2rem; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Ridgeway Bike Workshop</h1>
+    <p class="tagline">Same-week bike repairs in Millbrook</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="services">
+    <h2>Services and prices</h2>
+    <ul class="services">
+      <li>
+        <span class="name">Basic tune-up</span>
+        <span class="price">$45</span>
+        <span class="detail">Brakes, gears, tire pressure and chain lube.</span>
+      </li>
+      <li>
+        <span class="name">Full service</span>
+        <span class="price">$95</span>
+        <span class="detail">Strip, clean, adjust and true the wheels.</span>
+      </li>
+      <li>
+        <span class="name">Flat tire fix</span>
+        <span class="price">$15</span>
+        <span class="detail">Done while you wait.</span>
+      </li>
+      <li>
+        <span class="name">E-bike check</span>
+        <span class="price">$60</span>
+        <span class="detail">Battery, motor and brakes.</span>
+      </li>
+    </ul>
+    <p class="note"><strong>Free safety check for children's bikes</strong> on the first Saturday of each month.</p>
+  </section>
+
+  <section id="hours">
+    <h2>Opening hours</h2>
+    <table class="hours">
+      <caption>Opening hours of Ridgeway Bike Workshop</caption>
+      <thead>
+        <tr><th scope="col">Day</th><th scope="col">Hours</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Tuesday</th><td>9:00 – 18:00</td></tr>
+        <tr><th scope="row">Wednesday</th><td>9:00 – 18:00</td></tr>
+        <tr><th scope="row">Thursday</th><td>9:00 – 18:00</td></tr>
+        <tr><th scope="row">Friday</th><td>9:00 – 18:00</td></tr>
+        <tr><th scope="row">Saturday</th><td>9:00 – 14:00</td></tr>
+        <tr><th scope="row">Sunday</th><td class="closed">Closed</td></tr>
+        <tr><th scope="row">Monday</th><td class="closed">Closed</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="find-us">
+    <h2>Find us</h2>
+    <address>14 Station Road, Millbrook</address>
+  </section>
+
+  <section id="book">
+    <h2>Book a repair</h2>
+    <a class="button" href="mailto:bookings@example.com">Book a repair</a>
+    <p>Or email us directly at <a href="mailto:bookings@example.com">bookings@example.com</a>.</p>
+    <p>Walk-ins welcome for flat tires.</p>
+  </section>
+</main>
+
+<footer>
+  Ridgeway Bike Workshop · 14 Station Road, Millbrook
+</footer>
+</body>
+</html>
